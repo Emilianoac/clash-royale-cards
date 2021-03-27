@@ -1,0 +1,366 @@
+body.main-clash-royale {
+  font-family: "Lilita One", cursive;
+  margin: 0;
+  background-color: #1b2130;
+  font-size: 16px;
+  position: relative;
+}
+body.main-clash-royale * {
+  box-sizing: border-box;
+}
+body.main-clash-royale .swiper-container {
+  padding-bottom: 2em;
+}
+body.main-clash-royale .desarrollo {
+  position: fixed;
+  right: 20px;
+  bottom: 15px;
+  font-size: 0.78em;
+  color: white;
+  text-decoration: none;
+  z-index: 100000;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body.main-clash-royale .desarrollo span {
+  font-weight: bold;
+}
+body.main-clash-royale .swiper-pagination-bullet {
+  height: 30px;
+  width: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 400;
+  font-size: 0.95em;
+}
+body.main-clash-royale .contenedor {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: auto;
+  padding: 4em 0em;
+}
+body.main-clash-royale .mensaje {
+  transition: 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  text-align: center;
+  width: 100%;
+  font-size: 0.75em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 1em;
+}
+body.main-clash-royale .box {
+  width: 100%;
+  position: relative;
+  background-color: #00000021;
+  padding: 0em;
+  border-radius: 9px;
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 400px;
+  padding: 1em;
+}
+body.main-clash-royale .carta {
+  position: relative;
+  height: 320px;
+  width: 240px;
+  margin: 2em;
+  transition: 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  margin: 2em auto;
+  cursor: pointer;
+}
+body.main-clash-royale .carta:hover {
+  transform: scale(1.045);
+}
+body.main-clash-royale .carta:hover .cara-delantera .ilustracion-carta {
+  transform: scale(1.1);
+}
+body.main-clash-royale .carta.comun .cara {
+  box-shadow: unset;
+  animation: none;
+}
+body.main-clash-royale .carta.comun .cara .ilustracion-nivel-carta .nivel-carta {
+  background-color: rgba(0, 0, 0, 0.486);
+  color: #9ddcfa;
+}
+body.main-clash-royale .carta.epica .cara {
+  box-shadow: 1px 1px 6px 6px rgba(166, 45, 164, 0.918);
+  animation: neonPurpura 1.8s ease-in-out infinite;
+}
+body.main-clash-royale .carta.epica .cara .ilustracion-nivel-carta .nivel-carta {
+  background-color: #a62da4bc;
+  color: #fd89cf;
+}
+body.main-clash-royale .carta.legendaria {
+  border: 0;
+  height: 325px;
+}
+body.main-clash-royale .carta.legendaria .cantidad-elixir {
+  top: 10px;
+}
+body.main-clash-royale .carta.legendaria .cara {
+  border: 0;
+  box-shadow: unset;
+  animation: none;
+}
+body.main-clash-royale .carta.legendaria .cara .borde-carta-legendaria {
+  clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
+  -webkit-clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #e81dd7, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+  animation: rainbowNeon 5s ease-in-out infinite;
+  background-size: 600% 600%;
+  position: relative;
+}
+body.main-clash-royale .carta.legendaria .cara .contendio-cara-delantera-leg {
+  -webkit-clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
+  clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
+  height: 97%;
+  position: absolute;
+  width: 97%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+body.main-clash-royale .carta.legendaria .cara .contendio-cara-delantera-leg .nivel-carta span {
+  display: inline-block;
+  position: relative;
+  mix-blend-mode: multiply;
+  color: #000;
+  background: #fff;
+}
+body.main-clash-royale .carta.legendaria .cara .contendio-cara-delantera-leg .nivel-carta span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right, #37f39b, #fad154, #f4a2aa, #fc6eaf, #ff53fc);
+  pointer-events: none;
+  animation: rainbowNeon 3s ease-in-out infinite;
+  background-size: 300% 400%;
+  mix-blend-mode: screen;
+}
+body.main-clash-royale .carta.legendaria .cara-trasera {
+  clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
+  -webkit-clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
+  padding: 0;
+}
+body.main-clash-royale .carta.legendaria .cara-trasera .contenido-cara-trasera {
+  clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
+  -webkit-clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
+  background: radial-gradient(circle, #202126 0%, #243453 47%, rgba(21, 26, 31, 0.959) 100%);
+  height: 97%;
+  width: 97%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 6em 1em;
+}
+body.main-clash-royale .carta.legendaria .ilustracion-nivel-carta {
+  border: 0;
+}
+body.main-clash-royale .carta.legendaria .ilustracion-nivel-carta .nivel-carta {
+  padding-bottom: 0.5em;
+  background-color: #7ce5f6;
+  color: #ee449c;
+  text-shadow: rgba(0, 0, 0, 0.17) 2px 2px;
+}
+body.main-clash-royale .carta.vuelta .cara-delantera {
+  z-index: 0;
+  transform: rotateY(180deg);
+}
+body.main-clash-royale .carta.vuelta .cara-trasera {
+  transform: rotateY(0deg);
+}
+body.main-clash-royale .carta.carta-legendaria.vuelta .cara-delantera {
+  z-index: 0;
+  transform: rotateY(180deg);
+}
+body.main-clash-royale .carta.carta-legendaria.vuelta .cara-trasera {
+  transform: rotateY(0deg);
+}
+body.main-clash-royale .cara {
+  position: absolute;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  border: 7px solid #1f1f1f;
+  animation: neonAnaranajado 1.8s ease-in-out infinite;
+}
+body.main-clash-royale .cara-delantera {
+  z-index: 10;
+  transition: 0.5s ease-in-out;
+}
+body.main-clash-royale .cara-trasera {
+  width: 100%;
+  display: flex;
+  font-family: "Verdana";
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+  transition: 0.6s ease-in-out;
+  padding: 1.7em;
+  font-size: 0.75em;
+  text-align: center;
+  background: radial-gradient(circle, #202126 0%, #243453 47%, rgba(21, 26, 31, 0.959) 100%);
+  color: white;
+}
+body.main-clash-royale .cara-trasera .nombre-carta {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #f8e5a6;
+}
+body.main-clash-royale .cara-trasera .descripcion-carta {
+  font-family: "Verdana";
+  margin-top: 0.5em;
+  font-size: 0.95em;
+}
+body.main-clash-royale .cara-trasera img.clash-icon {
+  position: absolute;
+  width: 30px !important;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%);
+}
+body.main-clash-royale .cantidad-elixir {
+  position: absolute;
+  top: -9px;
+  left: -9px;
+  height: 2px;
+  width: 2px;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  box-shadow: 2px 2px 4px #a62da4f0;
+  background-color: #bb13b9;
+  border: 3px solid #ab1a94;
+  color: white;
+  padding: 0.8em;
+  border-radius: 50px;
+  line-height: 0;
+}
+body.main-clash-royale .ilustracion-nivel-carta {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  color: white;
+  background: radial-gradient(circle, #202126 0%, #1d3567 47%, #151a1f 100%);
+  border: 7px solid #f0ecec1c;
+  overflow: hidden;
+  transition: 0.8s ease-in-out;
+  border-radius: 9px;
+}
+body.main-clash-royale .ilustracion-nivel-carta .nivel-carta {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  padding: 0.2em 0em;
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: 700;
+  background-color: #ee8523e8;
+  color: #f8e5a6;
+  text-shadow: rgba(0, 0, 0, 0.582) 2px 3px;
+  letter-spacing: 1.4px;
+  font-weight: 400;
+}
+body.main-clash-royale .ilustracion-nivel-carta .ilustracion-carta {
+  width: 100%;
+  position: absolute;
+  bottom: -60px;
+  transition: 0.7s cubic-bezier(0.215, 0.61, 0.355, 1);
+  z-index: 3;
+}
+body.main-clash-royale .ilustracion-nivel-carta .ilustracion-carta.pequeno {
+  bottom: 0;
+}
+body.main-clash-royale .ilustracion-nivel-carta .ilustracion-carta.arquero-magico {
+  bottom: 70px;
+  animation: 1.9s levitacion infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+body.main-clash-royale .ilustracion-nivel-carta:hover::after {
+  opacity: 1;
+}
+body.main-clash-royale .ilustracion-nivel-carta::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.3em;
+  background: #202126;
+  background: radial-gradient(circle, #202126 0%, #2b4781 47%, rgba(21, 26, 31, 0.959) 100%);
+  transition: opacity 0.5s ease-out;
+  z-index: 2;
+  opacity: 0;
+}
+@keyframes rainbowNeon {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@keyframes neonAnaranajado {
+  0% {
+    box-shadow: 1px 1px 6px 6px #ee8523f0;
+  }
+  50% {
+    box-shadow: 1px 1px 6px 6px #f1af59f0;
+  }
+  100% {
+    box-shadow: 1px 1px 6px 6px #ee8523f0;
+  }
+}
+@keyframes neonPurpura {
+  0% {
+    box-shadow: 1px 1px 6px 6px rgba(166, 45, 164, 0.918);
+  }
+  50% {
+    box-shadow: 1px 1px 6px 6px rgba(216, 101, 214, 0.918);
+  }
+  100% {
+    box-shadow: 1px 1px 6px 6px rgba(166, 45, 164, 0.918);
+  }
+}
+@keyframes levitacion {
+  0% {
+    bottom: 70px;
+  }
+  50% {
+    bottom: 80px;
+  }
+  100% {
+    bottom: 70px;
+  }
+}
+
+@media (max-width: 1199px) {
+  body.main-clash-royale .desarrollo {
+    position: absolute;
+    font-size: 0.7em;
+  }
+}
