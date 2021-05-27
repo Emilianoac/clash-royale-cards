@@ -1,8 +1,8 @@
-var swiper = new Swiper('.slide-cartas', {
+var swiper = new Swiper('.slider-cartas', {
     slidesPerView: 1,
     spaceBetween: 10,
     pagination: {
-      el:'.paginacion-slide-cartas',
+      el:'.slider-cartas__paginacion',
       clickable: true,
       renderBullet: function (index, className) {
           return '<span class="' + className + '">' + (index + 1) + '</span>';
