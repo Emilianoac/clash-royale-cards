@@ -1,0 +1,56 @@
+@keyframes rainbowNeon { 
+    0% {
+        background-position:0% 82%;
+    }
+
+    50% {
+        background-position:100% 19%;
+    }
+
+    100% {
+        background-position:0% 82%;
+    }
+}
+
+@keyframes neonAnaranajado {
+    0% {
+        box-shadow: 1px 1px 6px 6px #ee8523f0;
+    }
+    
+    50% {
+        box-shadow: 1px 1px 6px 6px #f1af59f0; 
+    }
+
+    100% {
+        box-shadow: 1px 1px 6px 6px #ee8523f0;
+    }
+}
+ 
+@keyframes neonPurpura {
+    0% {
+        box-shadow: 1px 1px 6px 6px rgba(166, 45, 164, 0.918);
+    }
+    
+    50% {
+        box-shadow: 1px 1px 6px 6px rgba(216, 101, 214, 0.918);
+    }
+
+    100% {
+        box-shadow: 1px 1px 6px 6px rgba(166, 45, 164, 0.918);
+    }
+}
+
+@keyframes levitacion {
+
+    0% {
+        bottom: 70px;
+    }
+
+    50% {
+        bottom: 80px;
+    }
+
+    100% {
+        bottom: 70px;
+    }
+}

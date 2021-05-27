@@ -5,118 +5,118 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clash Royale Cards</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=block" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
     <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body class="main-clash-royale">
-    <a class="desarrollo" href="https://emilianot.design/">Desarrollado por <span>Emiliano</span></a>
+<body>
     <main class="contenedor">
-        <div style="color: white;" class="mensaje text-white"> <strong>Doble click</strong>  sobre la carta para ver mas información.</div>
+        <p class="mensaje"> <strong>Doble click</strong> sobre la carta para ver mas información.</p>
         <div class="box">
-            <div class="swiper-container slide-cartas">
+            <div class="slider-cartas swiper-container">
                 <div class="swiper-wrapper">
+
+                    <!--Carta-carta_comun-->
                     <div class="swiper-slide">
-                        <div class="carta legendaria">
-                            <div class="cara cara-delantera">
-                                <div class="cantidad-elixir">4</div>
-                                <div class="borde-carta-legendaria">
+                        <article class="carta carta_comun">
+                            <div class="carta__cara_delantera cara">
+                                <span class="carta__cantidad-elixir">5</span>
+                                <div class="ilustracion-nivel-carta">
+                                    <img class="carta__ilustracion pequeno" src="https://i.ibb.co/ySzdgvR/los-pillos.png">
+                                    <p class="carta__nivel">Nivel 12</p>
                                 </div>
+                            </div>
+                            <div class="carta__cara_trasera cara">
+                                <div class="carta__contenido">
+                                    <h6 class="carta__nombre-personaje">Pillos</h6>
+                                    <p class="carta__descripcion">
+                                        ¡Libera a un trío de pillos de lo más travieso! El chico toma la delantera, 
+                                        mientras que las chicas acribillan a los enemigos desde la retaguardia ¡lanzando 
+                                        bolas de chicle con sus tirachinas!
+                                    </p>
+                                    <img class="carta__icono-clash" src="https://i.ibb.co/Q65LCnk/icono.png">
+                                </div>
+                            </div>
+                        </article>                
+                    </div>
+
+                    <!--Carta Legendaria-->
+                    <div class="swiper-slide">
+                        <article class="carta carta_legendaria">
+                            <div class="carta__cara_delantera cara cara-delantera">
+                                <span class="carta__cantidad-elixir">4</span>
+                                <div class="carta__borde"></div>
                                 <div class="contendio-cara-delantera-leg">
                                     <div class="ilustracion-nivel-carta">
-                                        <img class="ilustracion-carta pequeno arquero-magico" src="https://i.ibb.co/BgDKfpN/arquero.png">
-                                        <div class="nivel-carta"><span>Nivel 11</span> </div>
+                                        <img class="carta__ilustracion pequeno arquero-magico" src="https://i.ibb.co/BgDKfpN/arquero.png">
+                                        <p class="carta__nivel"><span>Nivel 11</span></p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="cara cara-trasera">
-                                <div class="borde-carta-legendaria">
-                                    <div class="contenido-cara-trasera">
-                                        <div class="nombre-carta"> Arquero Magico </div>
-                                        <div class="descripcion-carta">
-                                          <p>
-                                            No es un mago ni tampoco un arquero. Dispara una flecha mágica que atraviesa y daña a
-                                            los
-                                            enemigos que se interponen en su camino. No es ningún truco, ¡es magia!
-                                          </p>
-                                        </div>
-                                        <img class="clash-icon" src="https://i.ibb.co/Q65LCnk/icono.png" >
+                            <div class="carta__cara_trasera cara cara-trasera">
+                                <div class="carta__borde">
+                                    <div class="carta__contenido">
+                                        <h6 class="carta__nombre-personaje"> Arquero Magico </h6>
+                                        <p class="carta__descripcion">
+                                            No es un mago ni tampoco un arquero. Dispara una flecha mágica que atraviesa 
+                                            y daña a los enemigos que se interponen en su camino. No es ningún truco, 
+                                            ¡es magia!
+                                        </p>
+                                        <img class="carta__icono-clash" src="https://i.ibb.co/Q65LCnk/icono.png" >
                                     </div>
                                 </div>
                             </div>
-                        </div>                   
+                        </article>                   
                     </div>
+
+                    <!--Carta-carta_Epica-->
                     <div class="swiper-slide">
-                        <!--Carta-epica-->
-                        <div class="carta epica">
-                            <div class="cara cara-delantera">
-                                <div class="cantidad-elixir">5</div>
+                        <article class="carta carta_epica">
+                            <div class="carta__cara_delantera cara cara-delantera">
+                                <span class="carta__cantidad-elixir">5</span>
                                 <div class="ilustracion-nivel-carta">
-                                    <img class="ilustracion-carta pequeno" src="https://i.ibb.co/64L07VB/bruja.png">
-                                    <div class="nivel-carta"> Nivel 11</div>
+                                    <img class="carta__ilustracion pequeno" src="https://i.ibb.co/64L07VB/bruja.png">
+                                    <p class="carta__nivel">Nivel 11</p>
                                 </div>
                             </div>
-                            <div class="cara cara-trasera">
-                                <div class="contenido-cara-trasera">
-                                    <div class="nombre-carta">Bruja</div>
-                                    <div class="descripcion-carta">
+                            <div class="carta__cara_trasera cara cara-trasera">
+                                <div class="carta__contenido">
+                                    <h6 class="carta__nombre-personaje">Bruja</h6>
+                                    <p class="carta__descripcion">
                                         Invoca esqueletos y dispara rayos destructores. Por desgracia, 
                                         sus brillantes ojos de color rosa no disparan rayos láser.
-                                    </div>
-                                    <img class="clash-icon" src="https://i.ibb.co/Q65LCnk/icono.png" >
+                                    </p>
+                                    <img class="carta__icono-clash" src="https://i.ibb.co/Q65LCnk/icono.png" >
                                 </div>
                             </div>
-                        </div>                  
+                        </article>                  
                     </div>
+
+                    <!--Carta Especial-->
                     <div class="swiper-slide">
-                        <!--Carta especial-->
-                        <div class="carta">
-                            <div class="cara cara-delantera">
-                                <div class="cantidad-elixir">3</div>
+                        <article class="carta carta_especial">
+                            <div class="carta__cara_delantera cara cara-delantera">
+                                <span class="carta__cantidad-elixir">3</span>
                                 <div class="ilustracion-nivel-carta">
-                                    <img class="ilustracion-carta" src="https://i.ibb.co/PrJn44M/golem.png">
-                                    <div class="nivel-carta"> Nivel 12</div>
+                                    <img class="carta__ilustracion" src="https://i.ibb.co/PrJn44M/golem.png">
+                                    <p class="carta__nivel"> Nivel 12</p>
                                 </div>
                             </div>
-                            <div class="cara cara-trasera">
-                                <div class="contenido-cara-trasera">
-                                    <div class="nombre-carta">Gólem de Elixir</div>
-                                    <div class="descripcion-carta">
-                                        "Al ser destruido, se divide en dos golemitas de elixir,que,al ser destruuidos, se dividen en
-                                        dos
-                                        pegotes de elixir. !Cuando tu rival acabe con un pegote, recibira una gota de elixir"
-                                    </div>
-                                    <img class="clash-icon" src="https://i.ibb.co/Q65LCnk/icono.png" >
+                            <div class="carta__cara_trasera cara cara-trasera">
+                                <div class="carta__contendio">
+                                    <h6 class="carta__nombre-personaje">Gólem de Elixir</h6>
+                                    <p class="carta__descripcion">
+                                        "Al ser destruido, se divide en dos golemitas de elixir,que,al ser destruuidos, 
+                                        se dividen en dos pegotes de elixir. !Cuando tu rival acabe con un pegote, 
+                                        recibira una gota de elixir"
+                                    </p>
+                                    <img class="carta__icono-clash" src="https://i.ibb.co/Q65LCnk/icono.png" >
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                         <!--Carta-comun-->
-                        <div class="carta comun">
-                            <div class="cara cara-delantera">
-                                <div class="cantidad-elixir">5</div>
-                                <div class="ilustracion-nivel-carta">
-                                    <img class="ilustracion-carta pequeno" src="https://i.ibb.co/ySzdgvR/los-pillos.png">
-                                    <div class="nivel-carta"> Nivel 12</div>
-                                </div>
-                            </div>
-                            <div class="cara cara-trasera">
-                                <div class="contenido-cara-trasera">
-                                    <div class="nombre-carta">Pillos</div>
-                                    <div class="descripcion-carta">
-                                        ¡Libera a un trío de pillos de lo más travieso! El chico toma la delantera, mientras que las
-                                        chicas acribillan a los enemigos desde la retaguardia ¡lanzando bolas de chicle con sus
-                                        tirachinas!
-                                    </div>
-                                    <img class="clash-icon" src="https://i.ibb.co/Q65LCnk/icono.png" >
-                                </div>
-                            </div>
-                        </div>                
-                    </div>
+                        </article>
+                    </div>                
                 </div>
-                <div class="swiper-pagination paginacion-slide-cartas"></div>
+                <div class="slider-cartas__paginacion swiper-pagination"></div>
             </div>
         </div>
     </main>
