@@ -4,20 +4,19 @@ var swiper = new Swiper('.slider-cartas', {
     pagination: {
       el:'.slider-cartas__paginacion',
       clickable: true,
-      renderBullet: function (index, className) {
+      renderBullet: function (index, className ) {
           return '<span class="' + className + '">' + (index + 1) + '</span>';
       },
     }
 });
 
-const cartas = document.querySelectorAll(".carta");
-
-for (let i = 0; i < cartas.length; i++) {
-    let elemento = cartas[i];
+const $cartas = document.querySelectorAll(".carta");
+for (let i = 0; i < $cartas.length; i++) {
+    let elemento = $cartas[i];
     elemento.setAttribute('id', `carta${i}`);
 
     let idCarta = document.getElementById(elemento.id);
-    idCarta.addEventListener("dblclick",() =>{
+    idCarta.addEventListener( "click", () => {
         idCarta.classList.toggle("vuelta");
     });
 }
