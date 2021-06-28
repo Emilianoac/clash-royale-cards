@@ -1,3 +1,3 @@
-# clash-royale-cards
+# clash Royale Cards
 
-Desarrollo diseño visual de cartas del videojuego Clash Royale utilizando HTML , CSS y JavaScript.
+Desarrollo y diseño visual de cartas del videojuego Clash Royale utilizando HTML , CSS y JavaScript.
