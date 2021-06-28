@@ -1,15 +1,4 @@
-@keyframes rainbowNeon {
-  0% {
-    background-position: 0% 82%;
-  }
-  50% {
-    background-position: 100% 19%;
-  }
-  100% {
-    background-position: 0% 82%;
-  }
-}
-@keyframes neonAnaranajado {
+@keyframes resplandor_carta_especial {
   0% {
     box-shadow: 1px 1px 6px 6px #ee8523f0;
   }
@@ -20,7 +9,7 @@
     box-shadow: 1px 1px 6px 6px #ee8523f0;
   }
 }
-@keyframes neonPurpura {
+@keyframes resplandor_carta_epica {
   0% {
     box-shadow: 1px 1px 6px 6px rgba(166, 45, 164, 0.918);
   }
@@ -31,7 +20,18 @@
     box-shadow: 1px 1px 6px 6px rgba(166, 45, 164, 0.918);
   }
 }
-@keyframes levitacion {
+@keyframes resplandor_carta_legendaria {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@keyframes animacion_ilustracion_carta_legendaria {
   0% {
     bottom: 70px;
   }
@@ -44,55 +44,43 @@
 }
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
   font-family: "Lilita One", cursive;
   font-size: 16px;
-  position: relative;
-  margin: 0;
   background-color: #1b2130;
 }
 
 .contenedor {
   width: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: nowrap;
-  align-items: center;
   margin: auto;
-  padding: 4em 0em;
+  padding: 2em 0em;
 }
 
 .mensaje {
   width: 100%;
   font-size: 0.75em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  transition: 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  margin-top: 3em;
+  margin-bottom: 1em;
   text-align: center;
   color: white;
-  margin-bottom: 1em;
 }
 
-.box {
+.cartas-contenedor {
   width: 100%;
-  position: relative;
-  background-color: #00000021;
-  padding: 0em;
-  border-radius: 9px;
-  display: flex;
-  margin: auto;
-  flex-wrap: wrap;
-  justify-content: center;
   max-width: 400px;
+  margin: auto;
   padding: 1em;
+  background-color: #00000021;
+  border-radius: 9px;
 }
 
-@media (max-width: 1199px) {
-  body.main-clash-royale .desarrollo {
-    position: absolute;
-    font-size: 0.7em;
+@media (max-width: 575px) {
+  .cartas-contenedor {
+    transform: scale(0.9);
   }
 }
 .swiper-container {
@@ -119,46 +107,62 @@ body {
   margin: 2em auto;
   cursor: pointer;
 }
-.carta .carta__cantidad-elixir {
+.carta .carta__cara {
+  position: absolute;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  border: 7px solid #1f1f1f;
+}
+.carta .carta__cara_delantera {
+  z-index: 10;
+  transition: 0.5s ease-in-out;
+}
+.carta .carta__cara_delantera .carta__cantidad-elixir {
+  position: absolute;
+  top: -9px;
+  left: -9px;
   height: 2px;
   width: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: -9px;
-  left: -9px;
   padding: 0.8em;
   line-height: 0;
   z-index: 9999;
   font-size: 20px;
+  color: white;
   border-radius: 50px;
   border: 3px solid #ab1a94;
   box-shadow: 2px 2px 4px #a62da4f0;
   background-color: #bb13b9;
-  color: white;
 }
-.carta .ilustracion-nivel-carta {
+.carta .carta__cara_delantera .carta__cantidad-elixir:hover {
+  filter: brightness(90%);
+}
+.carta .carta__cara_delantera .carta__contenido-delantero {
   height: 100%;
   width: 100%;
   position: relative;
+  margin: 0;
   overflow: hidden;
   border: 7px solid #f0ecec1c;
   border-radius: 9px;
-  background: radial-gradient(circle, #202126 0%, #1d3567 47%, #151a1f 100%);
   color: white;
+  background: radial-gradient(circle, #202126 0%, #1d3567 47%, #151a1f 100%);
   transition: 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.carta .ilustracion-nivel-carta:hover::after {
-  opacity: 1;
-}
-.carta .ilustracion-nivel-carta::after {
+.carta .carta__cara_delantera .carta__contenido-delantero::after {
   content: "";
-  width: 100%;
-  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   border-radius: 0.3em;
   background: #202126;
   z-index: 2;
@@ -166,7 +170,16 @@ body {
   background: radial-gradient(circle, #202126 0%, #2b4781 47%, rgba(21, 26, 31, 0.959) 100%);
   transition: opacity 0.5s ease-out;
 }
-.carta .carta__nivel {
+.carta .carta__cara_delantera .carta__contenido-delantero:hover::after {
+  opacity: 1;
+}
+.carta .carta__cara_delantera .carta__contenido-delantero .carta__ilustracion {
+  width: 100%;
+  position: absolute;
+  z-index: 3;
+  transition: 0.7s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.carta .carta__cara_delantera .carta__contenido-delantero .carta__nivel {
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -180,19 +193,36 @@ body {
   font-weight: 400;
   text-shadow: rgba(0, 0, 0, 0.582) 2px 3px;
 }
-.carta .carta__ilustracion {
+.carta .carta__cara_trasera {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+  padding: 1.7em;
+  font-size: 0.75em;
+  text-align: center;
+  font-family: "Verdana";
+  color: white;
+  background: radial-gradient(circle, #202126 0%, #243453 47%, rgba(21, 26, 31, 0.959) 100%);
+  transition: 0.6s ease-in-out;
+}
+.carta .carta__cara_trasera .carta__nombre-personaje {
+  font-size: 1.3em;
+  font-weight: 700;
+  margin: 0;
+  color: #f8e5a6;
+}
+.carta .carta__cara_trasera .carta__descripcion {
+  margin-top: 0.5em;
+  font-size: 0.95em;
+}
+.carta .carta__cara_trasera .carta__icono-clash {
   position: absolute;
-  bottom: -60px;
-  z-index: 3;
-  transition: 0.7s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-.carta .carta__ilustracion.pequeno {
-  bottom: 0;
-}
-.carta .carta__ilustracion.arquero-magico {
-  bottom: 70px;
-  animation: 1.9s levitacion infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 30px;
 }
 .carta:hover {
   transform: scale(1.045);
@@ -201,69 +231,91 @@ body {
   transform: scale(1.1);
 }
 
-.carta_comun .cara {
-  box-shadow: unset;
-  animation: none;
+.carta_comun .carta__cara_delantera .carta__ilustracion {
+  bottom: 30px;
 }
-.carta_comun .carta__nivel {
+.carta_comun .carta__cara_delantera .carta__nivel {
   background-color: rgba(0, 0, 0, 0.486);
   color: #9ddcfa;
 }
 
-.carta_especial .carta__nivel {
+.carta_especial .carta__cara {
+  animation: resplandor_carta_especial 1.8s ease-in-out infinite;
+}
+.carta_especial .carta__cara_delantera .carta__ilustracion {
+  bottom: -20px;
+}
+.carta_especial .carta__cara_delantera .carta__nivel {
   background-color: #ee8523e8;
   color: #f8e5a6;
 }
 
-.carta_epica .cara {
-  box-shadow: 1px 1px 6px 6px rgba(166, 45, 164, 0.918);
-  animation: neonPurpura 1.8s ease-in-out infinite;
+.carta_epica .carta__cara {
+  animation: resplandor_carta_epica 1.8s ease-in-out infinite;
 }
-.carta_epica .carta__nivel {
+.carta_epica .carta__cara_delantera .carta__ilustracion {
+  bottom: 30px;
+}
+.carta_epica .carta__cara_delantera .carta__nivel {
   background-color: #a62da4bc;
   color: #fd89cf;
 }
 
 .carta_legendaria {
-  border: 0;
   height: 325px;
-}
-.carta_legendaria .cara {
   border: 0;
-  box-shadow: unset;
-  animation: none;
 }
-.carta_legendaria .carta__cantidad-elixir {
-  top: 10px;
+.carta_legendaria .carta__cara {
+  border: 0;
+}
+.carta_legendaria .carta__borde,
+.carta_legendaria .carta__contenido-delantero,
+.carta_legendaria .carta__cara_trasera,
+.carta_legendaria .carta__contenido-trasero {
+  clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
+  -webkit-clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
+}
+.carta_legendaria .carta__borde,
+.carta_legendaria .carta__nivel span::before {
+  animation: resplandor_carta_legendaria 5s ease-in-out infinite;
 }
 .carta_legendaria .carta__borde {
   position: relative;
   width: 100%;
   height: 100%;
-  clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
-  -webkit-clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
-  animation: rainbowNeon 5s ease-in-out infinite;
   background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #e81dd7, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
   background-size: 600% 600%;
 }
-.carta_legendaria .contendio-cara-delantera-leg {
-  top: 50%;
-  left: 50%;
-  -webkit-clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
-  clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
+.carta_legendaria .carta__cara_delantera .carta__cantidad-elixir {
+  top: 10px;
+}
+.carta_legendaria .carta__cara_delantera .carta__contenido-delantero {
+  position: absolute;
   width: 97%;
   height: 97%;
-  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 0;
   transform: translate(-50%, -50%);
 }
-.carta_legendaria .carta__nivel span {
-  display: inline-block;
+.carta_legendaria .carta__cara_delantera .carta__contenido-delantero .carta__ilustracion {
+  bottom: 70px;
+  animation: animacion_ilustracion_carta_legendaria 1.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+.carta_legendaria .carta__cara_delantera .carta__contenido-delantero .carta__nivel {
+  background-color: #7ce5f6;
+  color: #ee449c;
+  text-shadow: rgba(0, 0, 0, 0.17) 2px 2px;
+  padding-bottom: 0.5em;
+}
+.carta_legendaria .carta__cara_delantera .carta__contenido-delantero .carta__nivel span {
   position: relative;
-  mix-blend-mode: multiply;
+  display: inline-block;
   color: #000;
   background: #fff;
+  mix-blend-mode: multiply;
 }
-.carta_legendaria .carta__nivel span::before {
+.carta_legendaria .carta__cara_delantera .carta__contenido-delantero .carta__nivel span::before {
   content: "";
   display: block;
   position: absolute;
@@ -271,37 +323,24 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(to right, #37f39b, #fad154, #f4a2aa, #fc6eaf, #ff53fc);
-  pointer-events: none;
-  background-size: 300% 400%;
   mix-blend-mode: screen;
-  animation: rainbowNeon 3s ease-in-out infinite;
+  background: linear-gradient(to right, #37f39b, #fad154, #f4a2aa, #fc6eaf, #ff53fc);
+  background-size: 300% 400%;
+  pointer-events: none;
 }
 .carta_legendaria .carta__cara_trasera {
-  clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
-  -webkit-clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
   padding: 0;
+  position: relative;
 }
-.carta_legendaria .carta__cara_trasera .carta__contenido {
-  clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
-  -webkit-clip-path: polygon(50% 0%, 100% 10%, 100% 50%, 100% 90%, 50% 100%, 0% 90%, 0% 50%, 0% 10%);
-  background: radial-gradient(circle, #202126 0%, #243453 47%, rgba(21, 26, 31, 0.959) 100%);
+.carta_legendaria .carta__cara_trasera .carta__contenido-trasero {
   height: 97%;
   width: 97%;
-  transform: translate(-50%, -50%);
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   padding: 6em 1em;
-}
-.carta_legendaria .ilustracion-nivel-carta {
-  border: 0;
-}
-.carta_legendaria .carta__nivel {
-  padding-bottom: 0.5em;
-  background-color: #7ce5f6;
-  color: #ee449c;
-  text-shadow: rgba(0, 0, 0, 0.17) 2px 2px;
+  background: radial-gradient(circle, #202126 0%, #243453 47%, rgba(21, 26, 31, 0.959) 100%);
 }
 
 .carta.vuelta .carta__cara_delantera {
@@ -310,63 +349,4 @@ body {
 }
 .carta.vuelta .carta__cara_trasera {
   transform: rotateY(0deg);
-}
-
-.carta_legendaria.vuelta .carta__cara_delantera {
-  z-index: 0;
-  transform: rotateY(180deg);
-}
-.carta_legendaria.vuelta .carta__cara_trasera {
-  transform: rotateY(0deg);
-}
-
-.cara {
-  position: absolute;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 14px;
-  border: 7px solid #1f1f1f;
-  animation: neonAnaranajado 1.8s ease-in-out infinite;
-}
-
-.carta__cara_delantera {
-  z-index: 10;
-  transition: 0.5s ease-in-out;
-}
-
-.carta__cara_trasera {
-  width: 100%;
-  display: flex;
-  font-family: "Verdana";
-  align-items: center;
-  justify-content: center;
-  transform: rotateY(180deg);
-  transition: 0.6s ease-in-out;
-  padding: 1.7em;
-  font-size: 0.75em;
-  text-align: center;
-  background: radial-gradient(circle, #202126 0%, #243453 47%, rgba(21, 26, 31, 0.959) 100%);
-  color: white;
-}
-.carta__cara_trasera .carta__nombre-personaje {
-  font-size: 1.3em;
-  font-weight: 700;
-  color: #f8e5a6;
-  margin: 0;
-}
-.carta__cara_trasera .carta__descripcion {
-  font-family: "Verdana";
-  margin-top: 0.5em;
-  font-size: 0.95em;
-}
-.carta__cara_trasera .carta__icono-clash {
-  position: absolute;
-  width: 30px !important;
-  bottom: 20px;
-  left: 50%;
-  transform: translate(-50%);
 }

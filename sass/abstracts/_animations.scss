@@ -1,18 +1,5 @@
-@keyframes rainbowNeon { 
-    0% {
-        background-position:0% 82%;
-    }
 
-    50% {
-        background-position:100% 19%;
-    }
-
-    100% {
-        background-position:0% 82%;
-    }
-}
-
-@keyframes neonAnaranajado {
+@keyframes resplandor_carta_especial {
     0% {
         box-shadow: 1px 1px 6px 6px #ee8523f0;
     }
@@ -26,7 +13,7 @@
     }
 }
  
-@keyframes neonPurpura {
+@keyframes resplandor_carta_epica {
     0% {
         box-shadow: 1px 1px 6px 6px rgba(166, 45, 164, 0.918);
     }
@@ -40,7 +27,21 @@
     }
 }
 
-@keyframes levitacion {
+@keyframes resplandor_carta_legendaria { 
+    0% {
+        background-position:0% 82%;
+    }
+
+    50% {
+        background-position:100% 19%;
+    }
+
+    100% {
+        background-position:0% 82%;
+    }
+}
+
+@keyframes animacion_ilustracion_carta_legendaria {
 
     0% {
         bottom: 70px;
